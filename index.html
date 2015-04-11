@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0">
+    <link rel="shortcut icon" href="res/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="res/img/favicon.ico" type="image/x-icon">
+
+    <title>Defiant.js</title>
+
+    <link type="text/css" href="res/css/style.css" media="all" rel="stylesheet">
+    <script src="res/js/deps/plugins/CSSPlugin.js" type="text/javascript">
+</script>
+    <script src="res/js/deps/easing/EasePack.js" type="text/javascript">
+</script>
+    <script src="res/js/deps/TweenLite.js" type="text/javascript">
+</script>
+    <script src="res/js/deps/jquery.js" type="text/javascript">
+</script>
+    <script src="res/js/defiant.min.js" type="text/javascript">
+</script>
+    <script src="res/js/site.js" type="text/javascript">
+</script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a target="_new" href="https://github.com/hbi99/defiant.js"></a>
+
+                <figure class="icon-github"></figure><span>Source</span>
+
+                <ul class="submenu">
+                    <li><a target="_new" href="https://raw.github.com/hbi99/defiant.js/master/dist/defiant-latest.min.js">Download</a></li>
+
+                    <li><a target="_new" href="https://github.com/hbi99/defiant.js">Fork me on GitHub</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="layout">
+        <div class="cover"></div>
+
+        <div class="content" data-section="overview">
+            <div class="xpath-evaluator">
+                <div class="structure">
+                    <!-- Dynamically Rendered -->
+                </div>
+                <textarea class="textor" spellcheck="false">
+</textarea>
+
+                <div class="error-json">
+                    <figure class="icon-warning"></figure>Invalid JSON data
+                </div>
+
+                <div class="examples">
+                    <h2>Sample XPath</h2><a class="nolink" href="/evaluator/eval-xpath/">//*</a> <a class="nolink" href="/evaluator/eval-xpath/">//book</a> <a class="nolink" href="/evaluator/eval-xpath/">//category</a> <a class="nolink" href="/evaluator/eval-xpath/">//@price</a> <a class="nolink" href="/evaluator/eval-xpath/">//title</a> <a class="nolink" href="/evaluator/eval-xpath/">//title/text()</a> <a class="nolink" href="/evaluator/eval-xpath/">//bicycle</a> <a class="nolink" href="/evaluator/eval-xpath/">//book[3]</a> <a class="nolink" href="/evaluator/eval-xpath/">//book[position() &lt;= 2]</a> <a class="nolink" href="/evaluator/eval-xpath/">//book[last()]</a> <a class="nolink" href="/evaluator/eval-xpath/">//*[@price &gt; 10]</a> <a class="nolink" href="/evaluator/eval-xpath/">//*[category="reference"]/author</a> <a class="nolink" href="/evaluator/eval-xpath/">//*[contains(title, "the")]</a> <a class="nolink" href="/evaluator/eval-xpath/">//book[isbn]</a>
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <span class="btn-group"><a class="nolink button active" href="/evaluator/switch-to-json/">JSON</a> <a class="nolink button" href="/evaluator/switch-to-xml/">XML</a></span> <a class="nolink button" href="/evaluator/toggle-edit/">Edit</a> <span class="input-btn"><input type="text"> <a class="nolink button" href="/evaluator/eval-xpath/">Go</a></span> <a class="nolink button right" href="/evaluator/xpath-samples/">Examples</a>
+            </div>
+
+            <p>&#160;</p>
+
+            <h3 data-section="expressions-table">Expressions table</h3>
+
+            <p>The syntax table below offers a glimpse of the power that <abbr title="XML Path Language">XPath</abbr> brings. <abbr title="XML Path Language">XPath</abbr> has a lot <a href="http://msdn.microsoft.com/en-us/library/ms256122(v=vs.110).aspx" target="_new">more</a> to <a href="http://www.w3schools.com/xpath/xpath_syntax.asp" target="_new">offer</a>. An important advantage of implementing <abbr title="XML Path Language">XPath</abbr>, as contrasted with <strong>JSONPath</strong>, is that this language has been documented a great deal on the web and information and how-to's can easily be found and digested.</p>
+
+<table class="xpath-expressions"><tbody><tr class="evn"><td> <strong>XPath</strong> </td><td> <strong>JSONPath</strong> </td><td> <strong>Description</strong> </td></tr>
+<tr class="odd"><td> / </td><td> $ </td><td class="lft">the root object/element </td></tr>
+<tr class="evn"><td> . </td><td> @ </td><td class="lft">the current object/element </td></tr>
+<tr class="odd"><td> / </td><td> . or [] </td><td class="lft">child operator </td></tr>
+<tr class="evn"><td> .. </td><td> n/a </td><td class="lft">parent operator </td></tr>
+<tr class="odd"><td> // </td><td> .. </td><td class="lft">recursive descent. JSONPath borrows this syntax from E4X. </td></tr>
+<tr class="evn"><td> * </td><td> * </td><td class="lft">wildcard. All objects/elements regardless their names. </td></tr>
+<tr class="odd"><td> @ </td><td> n/a </td><td class="lft">attribute access. JSON structures don't have attributes. </td></tr>
+<tr class="evn"><td> [] </td><td> [] </td><td class="lft">subscript operator. XPath uses it to iterate over element collections and for <a href="http://www.w3.org/TR/xpath#predicates">predicates</a>. In Javascript and JSON it is the native array operator. </td></tr>
+<tr class="odd"><td> | </td><td> [,] </td><td class="lft">Union operator in XPath results in a combination of node sets. JSONPath allows alternate names or array indices as a set. </td></tr>
+<tr class="evn"><td> n/a </td><td> [start:end:step] </td><td class="lft">array slice operator borrowed from ES4. </td></tr>
+<tr class="odd"><td> [] </td><td> ?() </td><td class="lft">applies a filter (script) expression. </td></tr>
+<tr class="evn"><td> n/a </td><td> () </td><td class="lft">script expression, using the underlying script engine. </td></tr>
+<tr class="odd"><td> () </td><td> n/a </td><td class="lft">grouping in Xpath </td></tr></tbody></table>
+
+<table class="xpath-expressions"><tbody><tr class="evn"><td> <strong>XPath</strong> </td><td> <strong>JSONPath</strong> </td><td> <strong>Result</strong> </td></tr>
+<tr class="odd"><td class="lft"><code>/store/book/author</code> </td><td class="lft"><code>$.store.book[*].author</code> </td><td class="lft">the authors of all books in the store </td></tr>
+<tr class="evn"><td class="lft"><code>//author</code> </td><td class="lft"><code>$..author</code> </td><td class="lft">all authors </td></tr>
+<tr class="odd"><td class="lft"><code>/store/*</code> </td><td class="lft"><code>$.store.*</code> </td><td class="lft">all things in store, which are some books and a red bicycle. </td></tr>
+<tr class="evn"><td class="lft"><code>/store//price</code> </td><td class="lft"><code>$.store..price</code> </td><td class="lft">the price of everything in the store. </td></tr>
+<tr class="odd"><td class="lft"><code>//book[3]</code> </td><td class="lft"><code>$..book[2]</code> </td><td class="lft">the third book </td></tr>
+<tr class="evn"><td class="lft"><code>//book[last()]</code> </td><td class="lft"><code>$..book[(@.length-1)]</code><br>
+<code>$..book[-1:]</code> </td><td class="lft">the last book in order. </td></tr>
+<tr class="odd"><td class="lft"><code>//book[position()&lt;3]</code> </td><td class="lft"><code>$..book[0,1]</code><br>
+<code>$..book[:2]</code> </td><td class="lft">the first two books </td></tr>
+<tr class="evn"><td class="lft"><code>//book[isbn]</code> </td><td class="lft"><code>$..book[?(@.isbn)]</code> </td><td class="lft">filter all books with isbn number </td></tr>
+<tr class="odd"><td class="lft"><code>//book[price&lt;10]</code> </td><td class="lft"><code>$..book[?(@.price&lt;10)]</code> </td><td class="lft">filter all books cheapier than 10 </td></tr>
+<tr class="evn"><td class="lft"><code>//*</code> </td><td class="lft"><code>$..*</code> </td><td class="lft">all Elements in XML document. All members of JSON structure. </td></tr></tbody></table>
+
+            <p>In order to access <abbr title="XML Path Language">XPath</abbr> functionality easily, some global objects has been extended with useful methods, for instance; <code class="nolink" data-target="#JSON.search"><span class="obj">JSON</span>.<span class="fn">search</span></code>. Detailed information about these extensions can be found in the <a class="nolink" href="/goto/reference/">Function reference</a> section.</p>
+
+            <p>&#160;</p>
+
+            <h3 data-section="xpath-evaluator">XPath Evaluator</h3>
+
+            <p>Not familiar with <abbr title="XML Path Language">XPath</abbr>? Don't worry, use the <abbr title="XML Path Language">XPath</abbr> <b>Evaluator</b> below and you will become an expert in no time.</p>
+
+            <footer data-section="about">
+                <p>Credits:<strong>DefiantJS</strong> was developed by <a href="mailto:hbi@longscript.com">Hakan Bilgin</a> <strong>&copy; 2013-2015</strong><br></p>
+
+                <figure class="icon-hb"></figure>
+                <p>
+            </footer>
+        </div>
+    </section>
+</body>
+</html>
